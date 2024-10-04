@@ -14,10 +14,6 @@ project "yaml-cpp"
         "include/**.h"
     }
 
-    defines {
-        "YAML_CPP_STATIC_DEFINE",
-    }
-
 
     includedirs {
         "include"
@@ -29,7 +25,13 @@ project "yaml-cpp"
     filter "configurations:Debug"
         buildoptions "/MTd"
         symbols "on"
+        defines {
+            "YAML_CPP_STATIC_DEFINE",
+        }
 
     filter "configurations:Release"
         buildoptions "/MT"
         optimize "on"
+        defines {
+            "YAML_CPP_STATIC_DEFINE",
+        }
